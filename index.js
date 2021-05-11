@@ -16,7 +16,7 @@ console.log('user connected')
     socket.on('join', function(userNickname) {
         console.log(userNickname +" : has joined the chat "  );
         users[socket.id] = userNickname;
-        socket.broadcast.emit('userjoinedthechat', userNickname +" : has joined the chat ");
+        socket.broadcast.emit('userjoinedthechat', userNickname +" : has joined the chat! \n Say Hi");
     })
 
     socket.on('messagedetection', (senderNickname, messageContent) => {

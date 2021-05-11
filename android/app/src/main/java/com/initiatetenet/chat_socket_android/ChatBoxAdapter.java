@@ -1,5 +1,6 @@
 package com.initiatetenet.chat_socket_android;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +13,9 @@ import java.util.List;
 public class ChatBoxAdapter  extends RecyclerView.Adapter<ChatBoxAdapter.MyViewHolder> {
 
     private List<Message> MessageList;
+    Context context;
 
-    public  class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView nickname;
-        public TextView message;
-
-        public MyViewHolder(View view) {
-            super(view);
-            nickname = (TextView) view.findViewById(R.id.nickname1);
-            message = (TextView) view.findViewById(R.id.message1);
-        }
-    }
-
-    public ChatBoxAdapter(List<Message>MessagesList) {
+    public ChatBoxAdapter(List<Message> MessagesList, Context context) {
         this.MessageList = MessagesList;
     }
 
@@ -47,5 +38,16 @@ public class ChatBoxAdapter  extends RecyclerView.Adapter<ChatBoxAdapter.MyViewH
         Message m = MessageList.get(position);
         holder.nickname.setText(m.getNickname());
         holder.message.setText(m.getMessage() );
+    }
+
+    public  class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView nickname;
+        public TextView message;
+
+        public MyViewHolder(View view) {
+            super(view);
+            nickname = view.findViewById(R.id.nickname1);
+            message = view.findViewById(R.id.message1);
+        }
     }
 }

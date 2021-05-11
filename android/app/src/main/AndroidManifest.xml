@@ -5,14 +5,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".globalClass.Chat_socket_Android"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Chat_socket_Android">
-        <activity android:name=".ChatBoxActivity"></activity>
+        android:theme="@style/Theme.Chat_socket_Android"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ChatBoxActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,4 +24,3 @@
     </application>
 
 </manifest>
-
